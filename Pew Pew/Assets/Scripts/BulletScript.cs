@@ -17,7 +17,14 @@ public class BulletScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collision) {
-		Debug.Log(collision.gameObject.tag);
+
+		if (collision.gameObject.tag == "Enemy") {
+			Vector2 dir = (Vector2) GameObject.Find("PlayerSprite").transform.position - (Vector2) transform.position;
+			dir = -dir.normalized;
+			GameObject enemy = collision.gameObject;
+			enemy.GetComponent<EnemyScript>().TakeDamage();
+			enemy.GetComponent<Rigidbody2D>().AddForce(dir * 10f);
+		}
 		if (collision.gameObject.tag != "Player") {
 			Destroy(gameObject);	
 		}
