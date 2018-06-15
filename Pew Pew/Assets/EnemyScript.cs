@@ -20,6 +20,7 @@ public class EnemyScript : MonoBehaviour {
 	MonoBehaviour script;
 	static int amntKilled = 0;
 	Text scoreText;
+	public AudioClip deathSound;
 	
 	void Awake() {
 		transform.localScale = new Vector3(0, 0, 0);
@@ -70,7 +71,7 @@ public class EnemyScript : MonoBehaviour {
 
 		if (Time.time > nextSoundTime) {
 			AudioClip randomSound = enemyDamageSounds[Random.Range(0, enemyDamageSounds.Length - 1)];
-			enemySoundSource.PlayOneShot(randomSound);
+			enemySoundSource.PlayOneShot(randomSound, 0.15F);
 			nextSoundTime = Time.time + randomSound.length + 1F;
 		}
 
@@ -82,6 +83,7 @@ public class EnemyScript : MonoBehaviour {
 		foreach (GameObject part in parts) {
 			part.SetActive(true);
 		}
+		enemySoundSource.PlayOneShot(deathSound);
 		Destroy(render);
 		Destroy(script);
 		Destroy(rb);

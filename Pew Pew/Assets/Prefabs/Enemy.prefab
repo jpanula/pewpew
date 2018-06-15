@@ -413,7 +413,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.11
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -571,7 +571,7 @@ MonoBehaviour:
   - {fileID: 1427323237928964}
   - {fileID: 1701030747977006}
   - {fileID: 1241264165175046}
-  scoreText: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: e6c86ff18a747d44e8c420ca0beb9903, type: 3}
 --- !u!114 &114849097620393344
 MonoBehaviour:
   m_ObjectHideFlags: 1
