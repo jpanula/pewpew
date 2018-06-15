@@ -571,6 +571,7 @@ MonoBehaviour:
   - {fileID: 1427323237928964}
   - {fileID: 1701030747977006}
   - {fileID: 1241264165175046}
+  scoreText: {fileID: 0}
 --- !u!114 &114849097620393344
 MonoBehaviour:
   m_ObjectHideFlags: 1

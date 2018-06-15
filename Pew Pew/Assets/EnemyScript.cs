@@ -19,7 +19,7 @@ public class EnemyScript : MonoBehaviour {
 	int health;
 	MonoBehaviour script;
 	static int amntKilled = 0;
-	public Text scoreText;
+	Text scoreText;
 	
 	void Awake() {
 		transform.localScale = new Vector3(0, 0, 0);
@@ -35,6 +35,7 @@ public class EnemyScript : MonoBehaviour {
 		script = GetComponent<EnemyScript>();
 		isDead = false;
 		health = 5;
+		scoreText = GameObject.Find("Text").GetComponent<Text>();
 	}
 	
 	// Update is called once per frame

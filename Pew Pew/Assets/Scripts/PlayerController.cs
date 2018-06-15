@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour {
 			Vector2 dir = (Vector2) other.gameObject.transform.position - (Vector2) transform.position;
 			dir = -dir.normalized;
 			TakenDamage();
-			rb.AddForce(new Vector2(-0.5f, 0.5f) * 50F, ForceMode2D.Impulse);
+			rb.AddForce(new Vector2(-0.5f, 0.5f) * 20F, ForceMode2D.Impulse);
 		}
 	}
 
