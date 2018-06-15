@@ -9,7 +9,7 @@ public class PartScript : MonoBehaviour {
 		Physics2D.IgnoreLayerCollision(11, 9, true);
 		Physics2D.IgnoreLayerCollision(11, 10, true);
 		Physics2D.IgnoreLayerCollision(11, 11, true);
-		GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)), ForceMode2D.Impulse);	
+		GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-2, 2), Random.Range(-2, 2)), ForceMode2D.Impulse);	
 		GetComponent<Rigidbody2D>().AddTorque(Random.Range(-1.5F, 1.5F), ForceMode2D.Impulse);	
 	}
 	

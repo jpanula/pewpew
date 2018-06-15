@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour {
 
@@ -17,6 +18,12 @@ public class EnemyScript : MonoBehaviour {
 	bool isDead;
 	int health;
 	MonoBehaviour script;
+	static int amntKilled = 0;
+	public Text scoreText;
+	
+	void Awake() {
+		transform.localScale = new Vector3(0, 0, 0);
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +39,12 @@ public class EnemyScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (transform.localScale.x < 0.4) {
+			Vector3 newTransform = transform.localScale;
+			newTransform.x += 0.05F;
+			newTransform.y += 0.05F;
+			transform.localScale = newTransform;
+		}
 		if (render.color.b < 1) {
 			Color color = render.color;
 			color.b += 0.10f;
@@ -40,7 +53,6 @@ public class EnemyScript : MonoBehaviour {
 		}
 		if (Time.time > lastShotTime) {
 			rb.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, 0.1f));
-			Debug.Log("a");
 		}
 	}
 
@@ -71,5 +83,9 @@ public class EnemyScript : MonoBehaviour {
 		}
 		Destroy(render);
 		Destroy(script);
+		Destroy(rb);
+		Destroy(GetComponent<BoxCollider2D>());
+		amntKilled++;
+		scoreText.text = "Kills: " + amntKilled;
 	}
 }

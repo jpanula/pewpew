@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 61484984028242532}
   - component: {fileID: 82514019053993064}
   - component: {fileID: 114974825910080874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerSprite
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4896257658932830}
   - component: {fileID: 58693706194646706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 212489837527196330}
   - component: {fileID: 114954902442592854}
   - component: {fileID: 82027291331005126}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arms
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4948212053623288}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GunMuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,6 +425,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  jumpSound: {fileID: 8300000, guid: 943d31ff0ba57e04aaab4ee1f44623aa, type: 3}
 --- !u!114 &114954902442592854
 MonoBehaviour:
   m_ObjectHideFlags: 1
